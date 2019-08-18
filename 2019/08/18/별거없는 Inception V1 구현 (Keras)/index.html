@@ -195,7 +195,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p><strong>‘별거 없는’</strong> 시리즈는, 논문을 리뷰하고 코드로 구현해 보면서, 정말 <strong>논문과 코드</strong> 둘다 별거 없다는 것을 보여주기 위한 시리즈입니다. 사실상 대학들에서 나오는 논문들을 보면 <strong>쓸모없는 것 90%, 쓸모있는 것 10%</strong>라고 생각합니다. (물론 모든 논문은 그 나름의 가치가 있습니다만, 거칠게 말해서 그렇다는 것입니다.) 이 시리즈에서는 쓸모있는 것 10%만 뽑아서, 최대한 쉽게 설명하고, 쉽게 쉽게 넘어가려 합니다. 특정 부분에 있어서는 쉽게 얘기하기 위해서, 논문의 쓸데없는 부분을 무시할 수 있으니 참고 바랍니다.</p>
 <hr>
-<p><img src="/img-1566120625442.jpg" alt="img"></p>
+<p><img src="/images/img-1566120625442.jpg" alt="img"></p>
 <h2 id><a href="#" class="headerlink" title=" "></a> </h2><h2 id="들어가면서"><a href="#들어가면서" class="headerlink" title="들어가면서"></a><strong>들어가면서</strong></h2><p>2014년 논문이다. 그 당시 ImageNet의 INLSVRC 2014에서 Classification과 Detection분야에서 우승을 한 Architecture이다. 이 이후로 V2, V3 등등이 나왔는데, 일단은 V1만 이해하면 다른 것들은 쉽게 이해할 수 있을 것 같다. 보통은 Classification만을 구현해 보는데, 우리는 한번 Detection까지 어떻게 가는지 알아보도록 하자.</p>
 <hr>
 <h2 id="이-논문의-기여-사항"><a href="#이-논문의-기여-사항" class="headerlink" title="이 논문의 기여 사항"></a><strong>이 논문의 기여 사항</strong></h2><p><strong>1) 리소스/속도 이슈 풀기</strong> : 일단 기본적으로 Deep Learning은 리소스가 많이 사용되고, 속도가 느린 이슈가 있다. 이것을 해결하기 위한 적절한 Depth와 Width를 가진 Architecture를 Inception V1에서 제안한다. (Hebbian Principle을 사용한다.)</p>
@@ -211,11 +211,11 @@
 </ul>
 </li>
 </ul>
-<p><img src="/img-1566120625473.png" alt="img">Densely Connected Network</p>
+<p><img src="/images/img-1566120625473.png" alt="img">Densely Connected Network</p>
 <p>▼</p>
 <p>▼</p>
 <p>▼</p>
-<p><img src="/img-1566120625479.png" alt="img">Sparsely Connected Network</p>
+<p><img src="/images/img-1566120625479.png" alt="img">Sparsely Connected Network</p>
 <ul>
 <li>NiN에서의 Network안에서의 Network의 특징을 가져옴 (Lin et al)<ul>
 <li>공통적으로 1x1 Conv를 쓴다.</li>
@@ -246,7 +246,7 @@
 </tr>
 </tbody></table>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a><strong>Architecture</strong></h1><h3 id="1-Overall"><a href="#1-Overall" class="headerlink" title="1) Overall"></a>1) Overall</h3><p><img src="/img-1566120625487.png" alt="img"></p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a><strong>Architecture</strong></h1><h3 id="1-Overall"><a href="#1-Overall" class="headerlink" title="1) Overall"></a>1) Overall</h3><p><img src="/images/img-1566120625487.png" alt="img"></p>
 <table>
 <thead>
 <tr>
@@ -411,14 +411,14 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><h3 id="2-Details"><a href="#2-Details" class="headerlink" title="2) Details"></a>2) Details</h3><p><img src="/img-1566120625528.png" alt="img">Inception Module (Naive Version)</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><h3 id="2-Details"><a href="#2-Details" class="headerlink" title="2) Details"></a>2) Details</h3><p><img src="/images/img-1566120625528.png" alt="img">Inception Module (Naive Version)</p>
 <ul>
 <li>Architecture에서 가장 중요한건, Inception Module이다.</li>
 <li>위의 그림은 전체 ARchitecture에서 Inception Module을 설명하고 있다. (위의 것은 Naive버전이다)</li>
 <li>Inception Layer는 1x1 Conv, 3x3 Conv, 5x5 Conv Layer들의 Combination이다. 그리고 Concatenate Layer에서 Concatenation을 한 후에(single Output Vector로 만들어서) 다음 단계의 Input으로 활용한다.</li>
 <li>위의 Layer에 추가적으로 아래와같은 Layer를 만들 수 있다.</li>
 </ul>
-<p><img src="/img-1566120625545.png" alt="img">Inception Module (Modified)</p>
+<p><img src="/images/img-1566120625545.png" alt="img">Inception Module (Modified)</p>
 <ul>
 <li>이를 통해서 Depth와 Width를 늘리면서도, Overfitting을 막고, 속도를 빠르게 해 준다.</li>
 <li>위와 같이 1x1 Conv Layer를 넣음으로써, Dimensionaly Reduction을 수행한다. 3x3 Max Pooling Layer를 추가한다. 이를 통해서 Another Option을 Inception Layer에 제공한다.</li>
